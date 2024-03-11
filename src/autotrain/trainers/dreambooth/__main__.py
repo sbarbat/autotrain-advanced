@@ -91,7 +91,7 @@ def train(config):
             lr_num_cycles = config.num_cycles
             lr_power = config.lr_power
             dataloader_num_workers = config.dataloader_num_workers
-            optimizer = "AdamW"
+            optimizer = "Prodigy"
             use_8bit_adam = config.use_8bit_adam
             adam_beta1 = config.adam_beta1
             adam_beta2 = config.adam_beta2
@@ -163,6 +163,7 @@ def train(config):
             push_to_hub = config.push_to_hub
             hub_token = config.token
             hub_model_id = config.repo_id
+            optimizer = "Prodigy"
             logging_dir = os.path.join(config.project_name, "logs")
             allow_tf32 = config.allow_tf32
             report_to = "tensorboard" if config.logging else None
