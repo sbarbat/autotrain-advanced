@@ -639,7 +639,9 @@ def main(args):
 
         optimizer_class = bnb.optim.AdamW8bit
     else:
-        optimizer_class = torch.optim.AdamW
+        from prodigyopt import Prodigy
+        optimizer_class = Prodigy
+
 
     # Optimizer creation
     params_to_optimize = list(filter(lambda p: p.requires_grad, unet.parameters()))
